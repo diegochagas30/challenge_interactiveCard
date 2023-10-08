@@ -16,30 +16,93 @@ body{
 }
 
 
-.left{
-    margin: 0;
+.left {
+    margin-right: 50vh;
     padding: 0;
     width: 50%;
     height: 100vh;
 }
 
-#front_card{
-    position: absolute;
-    top: 100px;
-    left: 150px;
+
+
+#front_card {
+    position: relative;
+    
 }
 
-#back_card{
+.card-info {
+    color: hsl(0, 0%, 100%);
+    text-transform: uppercase;
+    
+}
+
+#card-front {
+    position: absolute;
+    top: 100px;
+    left: 140px;
+}
+
+#card-logo {
+    position: absolute;
+    top: 140px;
+    left: 180px;
+}
+
+#card-number {
+    position: absolute;
+    width: 100%;
+    font-size: 2.4ch;
+    font-weight: 300;
+    top: 220px;
+    left: 178px;
+    letter-spacing: 0.3ch;
+}
+
+#card-name {
+    position: absolute;
+    font-size: 1.3ch;
+    letter-spacing: 0.4ch;
+    color: hsl(270, 3%, 87%);
+    width: 100%;
+    top: 285px;
+    left: 180px;
+}
+
+#card-date {
+    position: absolute;
+    font-size: 1.3ch;
+    letter-spacing: 0.4ch;
+    color: hsl(270, 3%, 87%);
+    width: 100%;
+    top: 285px;
+    left: 490px;
+}
+
+#back_card {
+    position: relative;
+}
+
+#card-back {
     position: absolute;
     top: 400px;
     left: 250px;
+}
+
+#card-code {
+    position: absolute;
+    font-size: 1.3ch;
+    letter-spacing: 0.4ch;
+    color: hsl(0, 0%, 100%);
+    width: 100%;
+    top: 500px;
+    left: 600px;
 }
 
 .cadastro{
     width: 50%;
     height: 100vh;
     margin: 0;
-    padding: 0vh 30vh 0vh 60vh;
+    padding: 0vh 30vh 0vh 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,30 +113,43 @@ body{
 input[type="text"] {
     font-family: 'Space Grotesk', sans-serif;
     border: 1px solid hsl(278, 68%, 11%);
-    border-radius: 7px; /* Bordas arredondadas */
-    padding: 10px; /* Espaço interno */
+    border-radius: 7px; 
+    padding: 10px; 
 }
 
 .dados {
     align-items: left;
-    margin-bottom: 0px;
+    margin-bottom: 2.5ch;
 }
   
 .dados label {
     display: block;
-    width: 40%; /* Largura do título */
-    text-align: left; /* Alinhar o título à direita */
-    font-size: 1.5ch;
-    margin-right: 20px; /* Espaço entre o título e o campo de input */
+    width: 40%; 
+    text-align: left; 
+    font-size: 1.2ch;
+    font-weight: 600;
+    color: hsl(278, 68%, 11%);
+    letter-spacing: 0.1ch;
+    margin-right: 20px; 
+    padding-bottom: 1.5ch;
 }
   
 .dados input[type="text"] {
     display: block;
-    width: 100%; /* Largura do campo de input */
+    width: 90%; 
+    height: 2.5ch;
     border-radius: 10px;
     border-width: 0.1ch;
+    border-color: hsl(270, 3%, 87%);
     padding: 10px;
 }
+
+.dados input::placeholder,
+textarea::placeholder {
+  color: hsl(0, 0%, 81%);
+  font-size: 1.8ch;
+}
+
 
 #erro_cardNumber{
     margin-bottom: 15px;
@@ -89,32 +165,59 @@ input[type="text"] {
     display: flex;
     align-items: left;
     grid-template-columns: 2;
+    margin-bottom: 2ch;
+}
+
+.dados-mesma-linha label {
+    display: block;
+    text-align: left; 
+    font-size: 1.2ch;
+    font-weight: 600;
+    color: hsl(278, 68%, 11%);
+    letter-spacing: 0.1ch;
+    padding-bottom: 1ch;
 }
 
 .metade1 {
     grid-column: 1;
-    display: flex;
     flex-direction: column; 
+    width: 50%;
 }
 
+
 .metade1 input[type="text"] {
-    width: 40%; 
+    width: 30%; 
     border-radius: 10px;
     border-width: 0.1ch;
+    border-color: hsl(270, 3%, 87%);
     padding: 10px;
+}
+
+.metade1 input::placeholder,
+textarea::placeholder {
+  color: hsl(0, 0%, 81%);
+  font-size: 1.8ch;
 }
 
 .metade2 {
     grid-column: 2;
-    display: flex;
     flex-direction: column; 
+    justify-content: left;
+    align-items: start;
 }
 
 .metade2 input[type="text"] {
-    width: 100%; 
+    width: 90%; 
     border-radius: 10px;
     border-width: 0.1ch;
+    border-color: hsl(270, 3%, 87%);
     padding: 10px;
+}
+
+.metade2 input::placeholder,
+textarea::placeholder {
+  color: hsl(0, 0%, 81%);
+  font-size: 1.8ch;
 }
 
 #erro{
@@ -133,6 +236,10 @@ input[type="text"] {
     border-radius: 10px;
     /*background-color:hsl(278, 68%, 11%);  */
 }
+
+button:hover {
+    cursor: pointer;
+  }
 
 #confirmButton{
     flex:1 ;

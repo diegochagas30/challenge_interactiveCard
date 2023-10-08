@@ -14,16 +14,26 @@
 
   <div class="left">
     
+    <div id="front_card" > 
+      <img id="card-front" src="images/bg-card-front.png" alt="frente do cartao">
+      <img id="card-logo" src="./images/card-logo.svg" alt="icone do cartao">
+      <div class="card-info">
+        <p id="card-number">0000 0000 0000 0000</p>
+        <p id="card-name">Jane Appleseed</p>
+        <p id="card-date">00/00</p>
+      </div>
+    </div>
+
+    <div id="back_card">
+      <img id="card-back" src="images/bg-card-back.png" alt="verso do cartao">
+      <div class="card-info">
+        <p id="card-code">000</p>
+      </div>
+    </div>
 
   </div>
 
-  <div id="front_card" >
-    <img id="frontCard" src="images/bg-card-front.png" alt="frente do cartao">
-  </div>
-
-  <div id="back_card">
-    <img id="backCard" src="images/bg-card-back.png" alt="verso do cartao">
-  </div>
+  
 
   <div class="cadastro">
     <form id="cadastroForm">
@@ -42,10 +52,8 @@
       <div class="dados-mesma-linha">
         <div class="metade1">
             <label for="expDate">EXP. DATE (MM/YY)</label>
-              <div class="input-dia-mes">
-                <input type="text" name="expMonth" id="expMonth" placeholder="MM" required>
-                <input type="text" name="expYear" id="expYear" placeholder="YY" required>
-              </div> 
+              <input type="text" name="expMonth" id="expMonth" placeholder="MM" required>
+              <input type="text" name="expYear" id="expYear" placeholder="YY" required>
         </div>
         <div class="metade2">
             <label for="cvc">CVC</label>
