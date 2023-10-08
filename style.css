@@ -23,6 +23,17 @@ body{
     height: 100vh;
 }
 
+#front_card{
+    position: absolute;
+    top: 100px;
+    left: 150px;
+}
+
+#back_card{
+    position: absolute;
+    top: 400px;
+    left: 250px;
+}
 
 .cadastro{
     width: 50%;
@@ -37,13 +48,15 @@ body{
 }
 
 input[type="text"] {
+    font-family: 'Space Grotesk', sans-serif;
+    border: 1px solid hsl(278, 68%, 11%);
     border-radius: 7px; /* Bordas arredondadas */
     padding: 10px; /* Espaço interno */
 }
 
 .dados {
     align-items: left;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
 }
   
 .dados label {
@@ -61,11 +74,20 @@ input[type="text"] {
     border-width: 0.1ch;
     padding: 10px;
 }
-  
+
+#erro_cardNumber{
+    margin-bottom: 15px;
+    color: hsl(0, 100%, 66%);
+}
+
+#erro_cardHolder{
+    margin-bottom: 15px;
+    color: hsl(0, 100%, 66%);
+}
+
 .dados-mesma-linha {
     display: flex;
     align-items: left;
-    margin-bottom: 15px;
     grid-template-columns: 2;
 }
 
@@ -95,6 +117,13 @@ input[type="text"] {
     padding: 10px;
 }
 
+#erro{
+    display: grid;
+    grid-template-columns: 33%  34% 33%;
+    margin-bottom: 20px;
+    color: hsl(0, 100%, 66%);
+}
+
 #botao{
     display: flex;
     justify-content: center;
@@ -111,6 +140,7 @@ input[type="text"] {
     border-radius: 10px;
     color: hsl(0, 0%, 100%);
     font-family: 'Space Grotesk', sans-serif;/*não estava aceitando a fonte configurada no seletor body*/
+    font-size: 1em;
     background-color:hsl(278, 68%, 11%); 
 }
 
