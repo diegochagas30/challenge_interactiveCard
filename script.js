@@ -9,15 +9,37 @@ const erro_expMonth=document.querySelector('div#erro_expMonth')
 const erro_expYear=document.querySelector('div#erro_expYear')
 const erro_cvc=document.querySelector('div#erro_cvc')
 
+const nameFormat= /^[a-zA-Z]{3,}[a-zA-Z ]*$/  /* nome deve ter no mínimo 3 letras*/ 
+const numCardFormat= /^\d{4}\s{1}\d{4}\s{1}\d{4}\s{1}\d{4}$/  /*nao pode ter espaços no começo/fim*/
+const monthFormat= /^\d{2}$/
+const yearFormat= /^\d{2}$/
+const cvcFormat= /^\d{3}$/
+
 const botao= document.getElementById('confirmButton')
 botao.addEventListener('click', Confirm)
+
+//tratamento de campos vazios
+function blankInput(input_variable, erro_variable){
+    if(input_variable.value.length==0){
+        input_variable.style.borderColor="hsl(0, 100%, 66%)"
+        erro_variable.innerHTML="Can't be blank"
+        erro_variable.style.paddingTop="5px"   
+    }
+}
+
+//tratamento de formatos digitados incorretamente
+function incorrectFormat(input_variable, erro_variable){
+    input_variable.style.borderColor= "hsl(0, 100%, 66%)"
+    erro_variable.innerHTML="Wrong format!"
+    erro_variable.style.paddingTop="5px"
+}
 
 
 function Confirm(){
     if(card_name.value.length==0){
-        card_name.style.borderColor= "hsl(0, 100%, 66%)"
-        erro_cardHolder.innerHTML="Can't be blank"
-        erro_cardHolder.style.paddingTop="5px"
+        blankInput(card_name, erro_cardHolder)
+    }else if(!nameFormat.test(card_name.value)) {
+        incorrectFormat(card_name, erro_cardHolder)
     }else{
         card_name.style.borderColor="hsl(278, 68%, 11%)" 
         erro_cardHolder.innerHTML=""
@@ -25,9 +47,9 @@ function Confirm(){
     }
 
     if(num_card.value.length==0){
-        num_card.style.borderColor="hsl(0, 100%, 66%)"
-        erro_cardNumber.innerHTML="Can't be blank"
-        erro_cardNumber.style.paddingTop="5px"
+        blankInput(num_card, erro_cardNumber)
+    }else if(!numCardFormat.test(num_card.value)){
+        incorrectFormat(num_card, erro_cardNumber)
     }else{
         num_card.style.borderColor="hsl(278, 68%, 11%)"
         erro_cardNumber.innerHTML=""
@@ -35,9 +57,9 @@ function Confirm(){
     }
 
     if(month.value.length==0){
-        month.style.borderColor="hsl(0, 100%, 66%)"
-        erro_expMonth.innerHTML="Can't be blank"
-        erro_expMonth.style.paddingTop="5px"
+        blankInput(month, erro_expMonth)
+    }else if(!monthFormat.test(month.value)){
+        incorrectFormat(month, erro_expMonth)
     }else{
         month.style.borderColor="hsl(278, 68%, 11%)"
         erro_expMonth.innerHTML=""
@@ -45,9 +67,9 @@ function Confirm(){
     }
 
     if(year.value.length==0){
-        year.style.borderColor="hsl(0, 100%, 66%)"
-        erro_expYear.innerHTML="Can't be blank"
-        erro_expYear.style.paddingTop="5px"
+        blankInput(year, erro_expYear)
+    }else if(!yearFormat.test(year.value)){
+        incorrectFormat(year, erro_expYear)
     }else{
         year.style.borderColor="hsl(278, 68%, 11%)"
         erro_expYear.innerHTML=""
@@ -55,9 +77,9 @@ function Confirm(){
     }
 
     if(cvc.value.length==0){
-        cvc.style.border="1px solid hsl(0, 100%, 66%)"
-        erro_cvc.innerHTML="Can't be blank"
-        erro_cvc.style.paddingTop="5px"
+        blankInput(cvc, erro_cvc)
+    }else if(!cvcFormat.test(cvc.value)){
+        incorrectFormat(cvc, erro_cvc)
     }else{
         cvc.style.borderColor="hsl(278, 68%, 11%)"
         erro_cvc.innerHTML=""
