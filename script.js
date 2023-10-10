@@ -85,4 +85,40 @@ function Confirm(){
         erro_cvc.innerHTML=""
         erro_cvc.style.paddingTop="0px"
     }
+
+    if (!erro_cardNumber.innerHTML && !erro_cardHolder.innerHTML &&
+        !erro_expMonth.innerHTML && !erro_expYear.innerHTML && !erro_cvc.innerHTML) {
+        // Todas as validações passaram, redirecionar para complete-page.html
+        window.location.href = "complete-page.html";
+    }
+
+    if (!erro_cardNumber.innerHTML && !erro_cardHolder.innerHTML &&
+        !erro_expMonth.innerHTML && !erro_expYear.innerHTML && !erro_cvc.innerHTML) {
+        // Preenche os elementos <p> com as informações inseridas pelo usuário
+        document.getElementById("card-name").innerText = card_name.value || "0";
+        document.getElementById("card-number").innerText = num_card.value.replace(/ /g, '').padEnd(16, "0");
+        document.getElementById("card-date").innerText = `${month.value || "00"}/${year.value || "00"}`;
+        document.getElementById("card-code").innerText = cvc.value || "000";
+        }
+
+    // Preenche os elementos <p> com as informações inseridas pelo usuário
+    document.getElementById("card-name").innerText = card_name.value;
+    document.getElementById("card-number").innerText = num_card.value;
+    document.getElementById("card-date").innerText = `${month.value}/${year.value}`;
+    document.getElementById("card-code").innerText = cvc.value;
+
+    if (!erro_cardNumber.innerHTML && !erro_cardHolder.innerHTML &&
+        !erro_expMonth.innerHTML && !erro_expYear.innerHTML && !erro_cvc.innerHTML) {
+
+        const urlParams = new URLSearchParams(); 
+        urlParams.set('cardName', card_name.value);
+        urlParams.set('cardNumber', num_card.value);
+        urlParams.set('cardDate', `${month.value}/${year.value}`);
+        urlParams.set('cardCode', cvc.value);
+
+        window.location.href = `complete-page.html?${urlParams.toString()}`; 
+        
+        }
+    
+
 }

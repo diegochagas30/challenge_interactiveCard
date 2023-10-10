@@ -110,147 +110,46 @@ body{
     float: right;
 }
 
-input[type="text"] {
-    font-family: 'Space Grotesk', sans-serif;
-    border: 1px solid hsl(278, 68%, 11%);
-    border-radius: 7px; 
-    padding: 10px; 
+.cadastro img {
+    align-self: center;
+    margin-bottom: 4ch;
 }
 
-.dados {
-    align-items: left;
-}
-  
-.dados label {
-    display: block;
-    width: 40%; 
-    text-align: left; 
-    font-size: 1.2ch;
-    font-weight: 600;
+.cadastro h1 {
+    font-size: 2.5ch;
     color: hsl(278, 68%, 11%);
-    letter-spacing: 0.1ch;
-    margin-right: 20px; 
-    padding-bottom: 1.5ch;
-    padding-top: 2.5ch;
-}
-  
-.dados input[type="text"] {
-    display: block;
-    width: 90%; 
-    height: 2.5ch;
-    border-radius: 10px;
-    border-width: 0.1ch;
-    border-color: hsl(270, 3%, 87%);
-    padding: 10px;
-    margin-bottom: -5px;
+    text-transform: uppercase;
+    letter-spacing: 0.35ch;
+    font-weight: 500;
+    margin: 0;
 }
 
-.dados input::placeholder,
-textarea::placeholder {
-  color: hsl(0, 0%, 81%);
-  font-size: 1.8ch;
-}
-
-
-
-.dados-mesma-linha {
-    display: flex;
-    align-items: left;
-    grid-template-columns: 2;
-}
-
-.dados-mesma-linha label {
-    display: block;
-    text-align: left; 
-    font-size: 1.2ch;
-    font-weight: 600;
-    color: hsl(278, 68%, 11%);
-    letter-spacing: 0.1ch;
-    padding-bottom: 1ch;
-    padding-top: 2.5ch;
-}
-
-.metade1 {
-    grid-column: 1;
-    flex-direction: column; 
-    width: 50%;
-}
-
-
-.metade1 input[type="text"] {
-    width: 30%; 
-    border-radius: 10px;
-    border-width: 0.1ch;
-    border-color: hsl(270, 3%, 87%);
-    padding: 10px;
-    margin-bottom: -5px;
-}
-
-.metade1 input::placeholder,
-textarea::placeholder {
-  color: hsl(0, 0%, 81%);
-  font-size: 1.8ch;
-}
-
-.metade2 {
-    grid-column: 2;
-    flex-direction: column; 
-    justify-content: left;
-    align-items: start;
-}
-
-.metade2 input[type="text"] {
-    width: 90%; 
-    border-radius: 10px;
-    border-width: 0.1ch;
-    border-color: hsl(270, 3%, 87%);
-    padding: 10px;
-    margin-bottom: -5px;
-}
-
-.metade2 input::placeholder,
-textarea::placeholder {
-  color: hsl(0, 0%, 81%);
-  font-size: 1.8ch;
-}
-
-#erro{
-    display: grid;
-    grid-template-columns: 21%  31% 36%;
-    margin-bottom: 20px;
-    color: hsl(0, 65%, 58%);
-}
-
-#erro_cardNumber,
-#erro_cardHolder,
-#erro_expMonth,
-#erro_expYear,
-#erro_cvc {
-    color: hsl(0, 65%, 58%);
-    margin-top: 0.5ch; 
-    font-size: 1.1ch;
+.cadastro p {
+    font-size: 1.8ch;
+    color: hsl(279, 6%, 55%);
+    margin-bottom: 4ch;
 }
 
 #botao{
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: 80%;
     height: 50px;
     text-align: center;
     border-radius: 10px;
-    /*background-color:hsl(278, 68%, 11%);  */
+    background-color:hsl(278, 68%, 11%); 
 }
 
 button:hover {
     cursor: pointer;
   }
 
-#confirmButton{
+#continueButton{
     flex:1 ;
     width: 100%;
     border-radius: 10px;
     color: hsl(0, 0%, 100%);
-    font-family: 'Space Grotesk', sans-serif;/*não estava aceitando a fonte configurada no seletor body*/
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1em;
     background-color:hsl(278, 68%, 11%); 
 }
