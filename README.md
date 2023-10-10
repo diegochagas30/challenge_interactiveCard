@@ -36,5 +36,5 @@ Users should be able to:
 
 - [Diego Chagas](https://github.com/diegochagas30)
 - [Victoria Flores](https://github.com/victoriafloresdev)
-- Ana Clara
+- [Ana Clara](https://github.com/acriles)
 
